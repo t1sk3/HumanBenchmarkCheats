@@ -13,13 +13,14 @@ public class reactionTime {
 
     public static void run() {
         Robot bot = null;
-        Color green = new Color(75, 219, 106);
+        Color green = new Color(76, 219, 106);
         Color blue = new Color(43, 135, 209);
         int counter = 0;
         int mask = InputEvent.BUTTON1_DOWN_MASK;
         boolean clicked = false;
         try {
             bot = new Robot();
+            System.out.println("Waiting...");
         
             while (counter != 5) {
                 if (bot.getPixelColor((int)MouseInfo.getPointerInfo().getLocation().getX(), (int)MouseInfo.getPointerInfo().getLocation().getY()).equals(green) && !clicked) {
@@ -36,6 +37,7 @@ public class reactionTime {
         } catch (Exception failed) {
             System.err.println("Failed instantiating Robot: " + failed);
         }
+        System.out.println("Done!");	
     }
 }
 
